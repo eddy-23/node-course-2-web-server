@@ -28,15 +28,19 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use((req,res,next) => {
-    res.render('maintenance.hbs');
-})
+// app.use((req,res,next) => {
+//     res.render('maintenance.hbs');
+// })
 app.get('/', (req, res) => {
-    //res.send('<h1>Hello Express!</h1>');
-    res.send({
-        name: 'Eduard',
-        like: ['Biking', 'Reading']
+    res.render('home.hbs', {
+        pageTitle: 'Home Page',
+        welcomeMessage: 'Welcome to my site'
     });
+    //res.send('<h1>Hello Express!</h1>');
+    // res.send({
+    //     name: 'Eduard',
+    //     like: ['Biking', 'Reading']
+    // });
 });
 
 app.get('/about', (req, res) => {
